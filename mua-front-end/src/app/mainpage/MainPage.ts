@@ -1,5 +1,5 @@
 import {Component, View} from 'angular2/angular2';
-import {TopnavComponent} from "../topnav/TopnavComponent";
+import {TopnavComponent} from "../components/topnav/TopnavComponent";
 
 @Component({})
 @View({
