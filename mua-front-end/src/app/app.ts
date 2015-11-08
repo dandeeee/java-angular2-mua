@@ -3,7 +3,6 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
 import {RouterLink, RouterOutlet} from 'angular2/router';
 import {MainPage} from "./mainpage/MainPage";
-//import {TopnavComponent} from "./topnav/TopnavComponent";
 
 @Component({
     selector: 'app',
