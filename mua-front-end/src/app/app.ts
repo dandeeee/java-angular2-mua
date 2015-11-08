@@ -14,18 +14,20 @@ import {MainPage} from "./mainpage/MainPage";
     `
 })
 @RouteConfig([
+    // add app level routes
     { path: '/', component: MainPage, as: 'Main' }
 ])
 export class AppCmp {
-    //router: Router;
-    //location: Location;
-    //
-    //constructor(router: Router, location: Location) {
-    //    this.router = router;
-    //    this.location = location;
-    //}
-    //
-    //getLinkStyle(path) {
-    //    return this.location.path() === path;
-    //}
+
+    router: Router;
+    location: Location;
+
+    constructor(router: Router, location: Location) {
+        this.router = router;
+        this.location = location;
+    }
+
+    getLinkStyle(path) {
+        return this.location.path() === path;
+    }
 }
