@@ -70,3 +70,9 @@ Icon?
 Thumbs.db
 packages
 
+# OS generated files #
+######################
+.gradle
+gradle
+gradlew
+gradlew.bat

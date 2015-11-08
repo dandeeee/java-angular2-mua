@@ -1,0 +1,4 @@
+rootProject.name = 'mua-project'
+
+include 'mua-back-end'
+include 'mua-front-end'

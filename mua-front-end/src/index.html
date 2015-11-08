@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Angular 2 App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <app>Loading...</app>
+
+    <!-- ES6-related imports -->
+    <script src="lib/es6-shim.min.js"></script>
+    <script src="lib/system-csp-production.js"></script>
+
+    <script>
+        //configure system loader
+        System.config({defaultJSExtensions: true});
+    </script>
+    <script src="lib/angular2.dev.js"></script>
+    <script src="lib/router.dev.js"></script>
+    <script src="lib/http.dev.js"></script>
+
+    <script>
+        //bootstrap the Angular2 application
+        System.import('bootstrap').catch(console.log.bind(console));
+    </script>
+
+</body>
+</html>
