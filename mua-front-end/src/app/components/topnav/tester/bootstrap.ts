@@ -3,4 +3,8 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {TopnavComponent} from '../TopnavComponent'
 
-bootstrap(TopnavComponent, [HTTP_PROVIDERS, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy})]);
+bootstrap(TopnavComponent, [
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    provide(LocationStrategy, {useClass: HashLocationStrategy})
+]);
