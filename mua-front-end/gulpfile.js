@@ -6,7 +6,8 @@ var browserSync = require("browser-sync");
 var PATHS = {
     all:    'src/**/*.*',
     src:    'src/**/*.ts',
-    res:    'src/**/*.css',
+    css:    'src/**/*.css',
+    res:    'src/res/*.*',
     html:   'src/**/*.html',
     lib:    'src/lib/*.*',
     out:    'build'
@@ -18,8 +19,12 @@ gulp.task('clean', function (cb) {
     del([PATHS.out], cb);
 });
 
+gulp.task('css', function () {
+    return gulp.src(PATHS.css).pipe(gulp.dest(PATHS.out));
+});
+
 gulp.task('res', function () {
-    return gulp.src(PATHS.res).pipe(gulp.dest(PATHS.out));
+    return gulp.src(PATHS.res).pipe(gulp.dest(PATHS.out + '/res'));
 });
 
 gulp.task('html', function () {
@@ -29,6 +34,7 @@ gulp.task('html', function () {
 gulp.task('lib', function () {
     return gulp.src(PATHS.lib).pipe(gulp.dest(PATHS.out + '/lib'));
 });
+
 
 gulp.task('ts2js', function () {
     var typescript = require('gulp-typescript');
@@ -47,11 +53,11 @@ gulp.task('ts2js', function () {
     return tsResult.js.pipe(gulp.dest(PATHS.out));
 });
 
-gulp.task('build', ['ts2js', 'res', 'html', 'lib']);
+gulp.task('build', ['ts2js', 'css', 'res', 'html', 'lib']);
 
 gulp.task('watch', function(){
     return gulp.watch(PATHS.all, ['build'])
-        //.on('change',browserSync.reload);
+        .on('change',browserSync.reload);
 });
 
 gulp.task('deploy-browserSync',function () {
