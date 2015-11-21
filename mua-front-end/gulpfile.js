@@ -9,6 +9,7 @@ var PATHS = {
     all:    'src/**/*.*',
     src:    'src/**/*.ts',
     css:    'src/**/*.css',
+    scss:   'src/**/*.scss',
     res:    'src/res/*.*',
     html:   'src/**/*.html',
     lib:    'src/lib/*.*',
@@ -38,6 +39,16 @@ gulp.task('lib', function () {
     return gulp.src(PATHS.lib).pipe(gulp.dest(PATHS.out + '/lib'));
 });
 
+gulp.task('scss', function () {
+    gulp.src(PATHS.scss) //Выберем наш main.scss
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(sass()) //Скомпилируем
+        //.pipe(prefixer()) //Добавим вендорные префиксы
+        //.pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(PATHS.out)); //И в build
+        //.pipe(reload({stream: true}));
+});
 
 gulp.task('ts2js', function () {
     var tsc = require('gulp-typescript');
@@ -60,7 +71,7 @@ gulp.task('ts2js', function () {
         .pipe(gulp.dest(PATHS.out));
 });
 
-gulp.task('build', ['ts2js', 'css', 'res', 'html', 'lib']);
+gulp.task('build', ['ts2js', 'css', 'scss', 'res', 'html', 'lib']);
 
 gulp.task('watch', function(){
     return gulp.watch(PATHS.all, ['build'])
