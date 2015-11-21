@@ -5,12 +5,17 @@ import {Component, View} from 'angular2/angular2';
 })
 @View({
     template: `
-        <div id="instastream" style="background-color: saddlebrown;">
+        <style type="text/css">
+            #instagram {
+                background-color: #ccc;
+            }
+        </style>
+        <div id="instagram">
             <h1>InstaStream</h1>
         </div>
     `
 })
-export class InstastreamComponent {
+export class InstagramComponent {
 
     constructor() {
     }

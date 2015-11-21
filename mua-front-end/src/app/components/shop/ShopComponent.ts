@@ -5,13 +5,17 @@ import {Component, View} from 'angular2/angular2';
 })
 @View({
     template: `
-        <div id="footer" style="background-color: #AAAAAA;">
+        <style type="text/css">
+            #shop {
+                background-color: #888;
+            }
+        </style>
+        <div id="shop">
             <h1>Shop</h1>
         </div>
     `
 })
 export class ShopComponent {
-
     constructor() {
     }
 }

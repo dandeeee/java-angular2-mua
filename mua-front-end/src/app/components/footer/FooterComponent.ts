@@ -5,7 +5,12 @@ import {Component, View} from 'angular2/angular2';
 })
 @View({
     template: `
-        <div id="footer" style="background-color: #00cc99;">
+        <style type="text/css">
+            #footer {
+                background-color: #999;
+            }
+        </style>
+        <div id="footer">
             <h1>Footer</h1>
         </div>
     `

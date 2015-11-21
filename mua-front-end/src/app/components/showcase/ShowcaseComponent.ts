@@ -6,8 +6,10 @@ import {BackendService} from "../../BackendService";
 })
 @View({
     template: `
-        <div id="showcase" style="background-color: red;">
-            <h1>Showcase</h1>
+        <div id="showcase">
+            <div class="showcase-wrapper">
+                <div class="slide slide-4"></div>
+            </div>
             <h2>Message from BACKEND: {{message.message}}</h2>
         </div>
     `

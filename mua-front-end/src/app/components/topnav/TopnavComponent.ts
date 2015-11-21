@@ -9,7 +9,7 @@ import {MainPage} from "../../mainpage/MainPage";
 @View({
     directives: [RouterLink],
     template: `
-        <div style="background-color: #c7d1cb;">
+        <div id="topnav">
             <nav>
                 <a [router-link]="['/Main']">Home</a>
                 <a [router-link]="['/Shop']">Shop</a>
