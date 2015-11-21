@@ -2,6 +2,8 @@ var gulp = require('gulp');
 //var plug = require('gulp-load-plugins')();
 //var log = plug.util.log;
 var browserSync = require("browser-sync");
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 var PATHS = {
     all:    'src/**/*.*',
@@ -10,7 +12,8 @@ var PATHS = {
     res:    'src/res/*.*',
     html:   'src/**/*.html',
     lib:    'src/lib/*.*',
-    out:    'build'
+    out:    'build',
+    maps:   '/'
 };
 
 gulp.task('clean', function (cb) {
@@ -37,9 +40,11 @@ gulp.task('lib', function () {
 
 
 gulp.task('ts2js', function () {
-    var typescript = require('gulp-typescript');
-    var tsResult = gulp.src(PATHS.src)
-        .pipe(typescript({
+    var tsc = require('gulp-typescript');
+
+    return gulp.src(PATHS.src)
+        .pipe(sourcemaps.init())
+        .pipe(tsc({
             noImplicitAny: true,
             module: 'system',
             target: 'ES5',
@@ -48,9 +53,11 @@ gulp.task('ts2js', function () {
             experimentalDecorators: true,
             noExternalResolve: true,
             declarationFiles: false
-        }));
-
-    return tsResult.js.pipe(gulp.dest(PATHS.out));
+        }))
+        .pipe(sourcemaps.write('.', {
+            sourceRoot: PATHS.maps
+        }))
+        .pipe(gulp.dest(PATHS.out));
 });
 
 gulp.task('build', ['ts2js', 'css', 'res', 'html', 'lib']);
