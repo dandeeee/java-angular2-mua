@@ -4,16 +4,158 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #4eff03;
 
-body, html{
-  position: relative;
+
+html, body{
   height: 100%;
-  min-height: 100%;
-  color: $primary-color;
-  font: 100% $font-stack;
+  font-size: 17px;
 }
 
-body, html, div, p,
-h1, h2, h3, h4, h5, h6{
-  margin: 0 !important;
-  padding: 0 !important;
+html, body, div {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased !important;
 }
+
+h1, h2, h3, p, div{
+  font-size: 100%;
+  line-height: 170%;
+  font-family: $font-stack !important;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* For tablets and low res monitors*/
+@media (max-width: 1024px) {
+  .wrapper{
+    width: 100%;
+  }
+
+  .wrapper-sidebar-bulleted-nav{
+    display: none;
+  }
+}
+
+/* For smartphones in landscape */
+@media (max-width: 800px) {
+  body, html {
+    font-size: 15px;
+  }
+
+  .wrapper{
+    width: 100%;
+  }
+
+  .footer .wrapper {
+    width: 100%;
+    padding: 1em;
+  }
+
+  #toolbar-logo,
+  #toolbar-divider,
+  #toolbar-lang{
+    display: none;
+  }
+
+  .toolbar-top .uk-nav a {
+    font-size: 90%;
+  }
+
+  .header-logo {
+    padding: 0.8em 1em 0.5em 0.5em;
+  }
+  .toolbar-top {
+    padding-left: 1.5em;
+  }
+
+  .slide-content-wrapper {
+    padding: 0 1.5em 0em 1.5em;
+    margin: 2em 0 2em 0;
+  }
+
+  .wrapper-sidebar-bulleted-nav{
+    display: none;
+  }
+
+  #service h1 {
+    text-align: center;
+    font-size: 300%;
+    color: #0f1237;
+    text-shadow: 1px 1px 2px white;
+  }
+
+  #service h2 {
+    font-size: 130%;
+    margin: 0.2em;
+    text-shadow: 1px 1px 1px white;
+  }
+
+  #service p {
+    margin: 0 !important;
+    padding: 0 1em 0 1em !important;
+    font-size: 90%;
+  }
+
+  #service i {
+    font-size: 250%;
+    color: #02a8e6;
+    text-shadow: 1px 1px 1px white;
+  }
+
+  #service div {
+    margin: 0;
+    padding: 0;
+  }
+
+  #service .slide-content-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer .uk-form-row input[type=text],
+  .footer .uk-form-row textarea {
+    width: 100%;
+  }
+}
+
+/* For smartphones portrait orientation*/
+@media (max-width: 400px) {
+  .toolbar-top,
+  .header-lang,
+  .footer-lang{
+    display: none !important;
+  }
+
+  .footer {
+    font-size: 90%;
+  }
+
+  .footer .uk-form-row input[type=text],
+  .footer .uk-form-row textarea {
+    width: 100%;
+  }
+
+  .toolbar-subnav{
+    border-top: 1px solid #b6b6b6;
+  }
+
+  .toolbar-subnav a,
+  .toolbar-subnav a:link,
+  .toolbar-subnav a:visited{
+    width: 100%;
+    border-bottom: 1px solid #b6b6b6;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+}
+

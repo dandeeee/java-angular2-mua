@@ -1,6 +1,41 @@
-#topnav{
-    position: absolute;
+#topnav {
+    color: white;
+    position: fixed;
     background-color: #aaa;
     width: 100%;
+    padding: 1em;
+    display: block;
+}
+
+
+.toolbar-top {
+    width: 100%;
+    background: #0f1237;
     color: white;
+    z-index: 100 !important;
+    position: relative;
+}
+
+.toolbar-top .uk-nav{
+}
+
+.toolbar-top .uk-nav a {
+    display: inline-block;
+    font-size: 130%;
+    line-height: 160%;
+    color: white;
+    font-weight: normal !important;
+    padding: .25em 1em .25em 1em;
+}
+
+.toolbar-top a.uk-active{
+    color: #05f3ff !important;
+    display: inline-block;
+}
+
+a.toolbar-active:link,
+a.toolbar-active:visited {
+    background-color: #a4e9ff;
+    color: #0f1237;
+    font-weight: bolder;
 }

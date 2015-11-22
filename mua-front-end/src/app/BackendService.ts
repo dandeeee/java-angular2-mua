@@ -3,7 +3,7 @@ import {Http} from 'angular2/http'
 
 export class BackendService {
 
-    result: Object;
+    //result: Object;
     error: Object;
     http: Http;
     baseUrl: string;
@@ -11,7 +11,6 @@ export class BackendService {
     constructor(@Inject http: Http) {
         this.http = http;
         this.baseUrl = 'http://localhost:9090';
-        console.log("Created BackendService")
     }
 
     getHello(){

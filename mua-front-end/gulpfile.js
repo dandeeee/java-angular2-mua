@@ -10,9 +10,9 @@ var PATHS = {
     src:    'src/**/*.ts',
     css:    'src/**/*.css',
     scss:   'src/**/*.scss',
-    res:    'src/res/*.*',
+    res:    'src/res/**/*.*',
     html:   'src/**/*.html',
-    lib:    'src/lib/*.*',
+    lib:    'src/lib/**/*.*',
     out:    'build',
     maps:   '/'
 };

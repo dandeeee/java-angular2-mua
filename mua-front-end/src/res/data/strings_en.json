@@ -1,0 +1,11 @@
+{
+
+  "topnav" : [
+    { "title" : "About" , "url" : "#about" },
+    { "title" : "Collections" , "url" : "#collections" },
+    { "title" : "Shop" , "url" : "#shop" },
+    { "title" : "Contact" , "url" : "#contact" }
+  ]
+
+
+}

@@ -10,12 +10,13 @@ import {FooterComponent} from "../components/footer/FooterComponent";
 @View({
     directives: [TopnavComponent, ShowcaseComponent, ShopComponent, InstagramComponent, FooterComponent],
     template: `
-
-        <topnav></topnav>
-        <showcase></showcase>
-        <shop></shop>
-        <instastream></instastream>
-        <footer></footer>
+        <div class="wrapper">
+            <topnav></topnav>
+            <showcase></showcase>
+            <shop></shop>
+            <instastream></instastream>
+            <footer></footer>
+        </div>
     `
 })
 export class MainPage {

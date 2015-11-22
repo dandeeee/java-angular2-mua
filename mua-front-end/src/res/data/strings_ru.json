@@ -1,0 +1,10 @@
+{
+
+  "topnav" : [
+    { "title" : "О нас" , "url" : "#about" },
+    { "title" : "Коллекции" , "url" : "#collections" },
+    { "title" : "Купить" , "url" : "#shop" },
+    { "title" : "Контакты" , "url" : "#contact" }
+  ]
+
+}
