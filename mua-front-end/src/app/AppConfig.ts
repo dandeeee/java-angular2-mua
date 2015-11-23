@@ -1,8 +1,8 @@
 import {Inject} from 'angular2/angular2';
 import {Http} from 'angular2/http';
-import {EventBus} from "app/EventBus";
+import {EventBus} from "EventBus";
 
-export class Config {
+export class AppConfig {
     DEFAULT_LANG : string = 'ru';
 
     eb: EventBus;

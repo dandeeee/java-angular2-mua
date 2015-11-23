@@ -1,10 +1,10 @@
-import {Component, View, Inject, NgFor, EventEmitter} from 'angular2/angular2';
+import {Component, View, Inject, NgFor} from 'angular2/angular2';
 import {RouterLink, Router} from 'angular2/router';
 import {Http} from 'angular2/http'
 
 import {MainPage} from "../../mainpage/MainPage";
 
-import {Config} from "../../Config";
+import {AppConfig} from "../../AppConfig";
 import {EventBus} from "../../EventBus";
 
 @Component({
@@ -71,12 +71,10 @@ export class TopnavComponent {
 
     http: Http;
     data: Object = { "topnav": [ {"title" : "xxx"} ]};
-    config: Config;
+    config: AppConfig;
     eb: EventBus;
 
-    update: EventEmitter = new EventEmitter();
-
-    constructor(router: Router, http: Http, eb: EventBus, config: Config) {
+    constructor(router: Router, http: Http, eb: EventBus, config: AppConfig) {
         this.http = http;
         this.eb = eb;
         this.config = config;
@@ -88,7 +86,6 @@ export class TopnavComponent {
             { path: '/shop', component: MainPage, as: 'Shop' },
             { path: '/about', component: MainPage, as: 'About' }
         ]);
-
 
         eb.subscribe("LangChanged", () => console.log("TopnavComponent handles LangChanged"));
         eb.subscribe("LangUpdated", this.langUpdated, this);
