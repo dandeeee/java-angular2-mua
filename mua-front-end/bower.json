@@ -1,0 +1,23 @@
+{
+  "name": "MUA Angular 2",
+  "version": "0.0.0",
+  "authors": [
+    "dandeeee <dandeeee@ya.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*",
+    "lodash" : "*",
+    "uikit" : "2.*",
+    "es6-shim": "0.33.*",
+    "system.js": "0.18.4"
+  }
+}

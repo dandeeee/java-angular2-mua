@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var browserSync = require("browser-sync");
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var rigger = require('gulp-rigger');
+var cssmin = require('gulp-minify-css');
 
 var PATHS = {
     all:    'src/**/*.*',
@@ -24,7 +26,9 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('css', function () {
-    return gulp.src(PATHS.css).pipe(gulp.dest(PATHS.out));
+    return gulp.src(PATHS.css)
+        .pipe(cssmin())
+        .pipe(gulp.dest(PATHS.out));
 });
 
 gulp.task('res', function () {
@@ -36,7 +40,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('lib', function () {
-    return gulp.src(PATHS.lib).pipe(gulp.dest(PATHS.out + '/lib'));
+    return gulp.src(PATHS.lib)
+        .pipe(rigger())
+        .pipe(gulp.dest(PATHS.out + '/lib'));
 });
 
 gulp.task('scss', function () {
