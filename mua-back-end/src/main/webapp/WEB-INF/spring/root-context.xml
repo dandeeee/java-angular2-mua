@@ -8,6 +8,9 @@
 
     <context:annotation-config />
 
-    <!--<context:component-scan base-package="com.dandeeee.mua" />-->
+    <context:component-scan base-package="com.dandeeee.mua.repo" />
+    <context:component-scan base-package="com.dandeeee.mua.service" />
+
+    <import resource="data.xml" />
 
 </beans>
