@@ -1,0 +1,39 @@
+package com.dandeeee.mua.model;
+
+import javax.persistence.*;
+
+@Entity
+@Access(AccessType.FIELD)
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    Long id;
+
+    String title;
+    int quantity;
+
+    Product() {
+    }
+
+    public Product(String title, int quantity) {
+        this.title = title; this.quantity = quantity;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+}
