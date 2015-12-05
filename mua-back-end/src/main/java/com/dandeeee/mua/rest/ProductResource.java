@@ -15,8 +15,14 @@ public class ProductResource extends SpringAwareResource {
     @Autowired private AppService appService;
 
     @GET
-    public List<Product> getAllPruducts() {
+    public List<Product> getAllProducts() {
         return appService.listProducts();
+    }
+
+    @GET
+    @Path("{id}")
+    public Product getProductForId(@PathParam("id") Long id) {
+        return appService.getProductForId(id);
     }
 
     @POST

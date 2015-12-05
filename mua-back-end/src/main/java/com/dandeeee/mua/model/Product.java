@@ -21,6 +21,14 @@ public class Product {
         this.title = title; this.quantity = quantity;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }

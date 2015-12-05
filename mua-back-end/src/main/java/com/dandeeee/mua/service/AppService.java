@@ -24,6 +24,11 @@ public class AppService {
     }
 
     @Transactional
+    public Product getProductForId(Long id) {
+        return productsRepo.get(id);
+    }
+
+        @Transactional
     public void removeProduct(Integer id) {
         productsRepo.removeProduct(id);
     }

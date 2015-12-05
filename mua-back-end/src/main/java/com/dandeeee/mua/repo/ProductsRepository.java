@@ -22,10 +22,15 @@ public class ProductsRepository {
         return sessionFactory.getCurrentSession().createQuery("from Product").list();
     }
 
+    public Product get(Long id) {
+        return (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+    }
+
     public void removeProduct(Integer id) {
         Product prod = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
         if (null != prod) {
             sessionFactory.getCurrentSession().delete(prod);
         }
     }
+
 }
