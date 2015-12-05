@@ -2,7 +2,11 @@ import {Component, View } from 'angular2/angular2';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
 import {RouterLink, RouterOutlet} from 'angular2/router';
-import {MainPage} from "./mainpage/MainPage";
+
+import {MainPage} from "./page/MainPage";
+import {AboutPage} from "./page/AboutPage";
+import {ShopPage} from "./page/ShopPage";
+import {ItemDetailsComponent} from "./components/shop/ItemDetailsComponent";
 
 @Component({
     selector: 'app',
@@ -14,8 +18,11 @@ import {MainPage} from "./mainpage/MainPage";
     `
 })
 @RouteConfig([
-    // add app level routes
-    { path: '/', component: MainPage, as: 'Main' }
+    { path: '/', component: MainPage, as: 'Main' },
+    { path: '/about', component: AboutPage, as: 'About' },
+
+    { path: '/shop', component: ShopPage, as: 'Shop' },
+    { path: '/item/:id', component: ItemDetailsComponent, as: 'ItemsDetails' }
 ])
 export class AppCmp {
 
@@ -27,7 +34,7 @@ export class AppCmp {
         this.location = location;
     }
 
-    getLinkStyle(path) {
+    getLinkStyle(path:any) {
         return this.location.path() === path;
     }
 }

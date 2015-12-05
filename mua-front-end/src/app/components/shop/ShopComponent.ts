@@ -1,9 +1,11 @@
 import {Component, View} from 'angular2/angular2';
+import {ItemListComponent} from "./ItemListComponent";
 
 @Component({
     selector: 'shop'
 })
 @View({
+    directives: [ItemListComponent],
     template: `
         <style type="text/css">
             #shop {
@@ -11,7 +13,7 @@ import {Component, View} from 'angular2/angular2';
             }
         </style>
         <div id="shop">
-            <h1>Shop</h1>
+            <itemslist></itemslist>
         </div>
     `
 })
