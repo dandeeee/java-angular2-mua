@@ -26,11 +26,19 @@ public class ProductsRepository {
         return (Product) sessionFactory.getCurrentSession().get(Product.class, id);
     }
 
-    public void removeProduct(Integer id) {
+    public void removeProduct(Long id) {
         Product prod = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
         if (null != prod) {
             sessionFactory.getCurrentSession().delete(prod);
         }
     }
 
+    public Product updateProduct(Long id, Product newProd) {
+        Product oldProd = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+        if (null != oldProd) {
+            oldProd.updateFrom(newProd);
+            sessionFactory.getCurrentSession().update(oldProd);
+        }
+        return oldProd;
+    }
 }

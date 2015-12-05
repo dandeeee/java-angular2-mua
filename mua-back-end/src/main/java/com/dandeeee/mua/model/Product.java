@@ -44,4 +44,9 @@ public class Product {
     public int getQuantity() {
         return this.quantity;
     }
+
+    public void updateFrom(Product newProd) {
+        this.title = newProd.title;
+        this.quantity = newProd.quantity;
+    }
 }

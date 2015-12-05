@@ -19,15 +19,30 @@ public class ProductResource extends SpringAwareResource {
         return appService.listProducts();
     }
 
+    @POST
+    public Product createProduct(@FormParam("title") String title,
+                                 @FormParam("quantity") int quantity) {
+        return appService.addProduct(new Product(title, quantity));
+    }
+
     @GET
     @Path("{id}")
     public Product getProductForId(@PathParam("id") Long id) {
         return appService.getProductForId(id);
     }
 
-    @POST
-    public Product newPhotoSpot(@FormParam("title") String title, @FormParam("quantity") int quantity) {
-        return appService.addProduct(new Product(title, quantity));
+    @PUT
+    @Path("{id}")
+    public Product updateProduct(@PathParam("id") Long id,
+                                 @FormParam("title") String title,
+                                 @FormParam("quantity") int quantity) {
+        return appService.updateProduct(id, new Product(title, quantity));
+    }
+
+    @DELETE
+    @Path("{id}")
+    public void deleteProduct(@PathParam("id") Long id){
+        appService.deleteProduct(id);
     }
 
 }
