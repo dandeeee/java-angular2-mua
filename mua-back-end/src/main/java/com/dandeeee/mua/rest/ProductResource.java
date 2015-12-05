@@ -21,8 +21,10 @@ public class ProductResource extends SpringAwareResource {
 
     @POST
     public Product createProduct(@FormParam("title") String title,
-                                 @FormParam("quantity") int quantity) {
-        return appService.addProduct(new Product(title, quantity));
+                                 @FormParam("quantity") int quantity,
+                                 @FormParam("price") int price,
+                                 @FormParam("descr") String descr) {
+        return appService.addProduct(new Product(title, quantity, price, descr));
     }
 
     @GET
@@ -35,8 +37,10 @@ public class ProductResource extends SpringAwareResource {
     @Path("{id}")
     public Product updateProduct(@PathParam("id") Long id,
                                  @FormParam("title") String title,
-                                 @FormParam("quantity") int quantity) {
-        return appService.updateProduct(id, new Product(title, quantity));
+                                 @FormParam("quantity") int quantity,
+                                 @FormParam("price") int price,
+                                 @FormParam("descr") String descr) {
+        return appService.updateProduct(id, new Product(title, quantity, price, descr));
     }
 
     @DELETE

@@ -13,12 +13,17 @@ public class Product {
 
     String title;
     int quantity;
+    int price;
+    String descr;
 
     Product() {
     }
 
-    public Product(String title, int quantity) {
-        this.title = title; this.quantity = quantity;
+    public Product(String title, int quantity, int price, String descr) {
+        this.title = title;
+        this.quantity = quantity;
+        this.price = price;
+        this.descr = descr;
     }
 
     public void setId(Long id) {
@@ -45,8 +50,26 @@ public class Product {
         return this.quantity;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return this.price;
+    }
+
+    public void setDescr(String descr) {
+        this.descr = descr;
+    }
+
+    public String getDescr() {
+        return this.descr;
+    }
+
     public void updateFrom(Product newProd) {
         this.title = newProd.title;
         this.quantity = newProd.quantity;
+        this.price = newProd.price;
+        this.descr = newProd.descr;
     }
 }
