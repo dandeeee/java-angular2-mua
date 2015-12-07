@@ -1,6 +1,8 @@
 package com.dandeeee.mua.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -15,6 +17,9 @@ public class Product {
     int quantity;
     int price;
     String descr;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", orphanRemoval = true, cascade = {CascadeType.ALL})
+    List<Attachment> attachments = new ArrayList<Attachment>();
 
     Product() {
     }
@@ -66,10 +71,30 @@ public class Product {
         return this.descr;
     }
 
-    public void updateFrom(Product newProd) {
+    public void setAttachments(List<Attachment> attach) {
+        this.attachments = attach;
+    }
+
+    public List<Attachment> getAttachments() {
+        return this.attachments;
+    }
+
+    public void copyFrom(Product newProd) {
         this.title = newProd.title;
         this.quantity = newProd.quantity;
         this.price = newProd.price;
         this.descr = newProd.descr;
+        this.attachments = newProd.getAttachments();
+    }
+
+    public void addAttachment(Attachment attachment) {
+        this.getAttachments().add(attachment);
+    }
+
+    public Attachment getAttchmentForId(Long attachmentId) {
+        for(Attachment a : getAttachments())
+            if(a.getId() == attachmentId)
+                return a;
+        return null;
     }
 }
