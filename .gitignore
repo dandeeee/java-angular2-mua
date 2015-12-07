@@ -8,6 +8,7 @@ obj
 /packages
 
 # Ignore Node & Bower
+# Ignore Node & Bower
 ###################
 node_modules
 /modular/client/build
@@ -62,6 +63,7 @@ build
 # *.sdf
 *.mdf
 *.ldf
+*.db
 
 # OS generated files #
 ######################
