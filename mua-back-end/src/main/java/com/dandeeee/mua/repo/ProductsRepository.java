@@ -1,5 +1,6 @@
 package com.dandeeee.mua.repo;
 
+import com.dandeeee.mua.model.Attachment;
 import com.dandeeee.mua.model.Product;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,12 +34,13 @@ public class ProductsRepository {
         }
     }
 
-    public Product updateProduct(Long id, Product newProd) {
-        Product oldProd = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
-        if (null != oldProd) {
-            oldProd.updateFrom(newProd);
-            sessionFactory.getCurrentSession().update(oldProd);
-        }
-        return oldProd;
+    public Product updateProduct(Product prod) {
+        sessionFactory.getCurrentSession().update(prod);
+        return prod;
     }
+
+    public List<Attachment> getAttachmentsForProductId(Long id) {
+        return sessionFactory.getCurrentSession().createQuery("from Attachment where product_id="+ id).list();
+    }
+
 }
