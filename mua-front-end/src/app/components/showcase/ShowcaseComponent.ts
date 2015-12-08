@@ -20,10 +20,10 @@ export class ShowcaseComponent {
     message: any = {'message' : 'Loading...'};
 
     constructor(backend: BackendService){
-        this.backend = backend;
-        this.backend
-            .getHello()
-            .subscribe(res => this.message = res.json());
+        //this.backend = backend;
+        //this.backend
+        //    .getHello()
+        //    .subscribe((res:any) => this.message = res.json());
     }
 
 }
