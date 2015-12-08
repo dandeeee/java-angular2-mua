@@ -12,9 +12,9 @@ import {BackendService} from "../../BackendService";
     template: `
         <topnav></topnav>
         <div>
-            <h1>{{item.id}}</h1>
-            <h2>{{item.title}}</h2>
-            <h3>{{item.quantity}}</h3>
+            <h1>{{item.id}}-{{item.title}}-{{item.quantity}}-{{item.price}}</h1>
+            <h2>{{item.descr}}</h2>
+            <img *ng-for="#a of item.attachments;" src="rest/file/img?src={{a.path}}" width="200px;" />
         </div>
         <hr>
 
@@ -36,7 +36,7 @@ export class ItemDetailsComponent {
     fetchItemData() {
         this.backend
             .getItemForId(this.id)
-            .subscribe((res) => this.item = res.json();)
+            .subscribe((res) => this.item = res.json());
     }
 }
 

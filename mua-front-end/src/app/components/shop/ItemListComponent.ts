@@ -11,6 +11,7 @@ import {BackendService} from "../../BackendService";
     template: `
         <div *ng-for="#i of items;">
             <a [router-link]="['/ItemsDetails',{'id': i.id}]">{{i.title}}-{{i.quantity}} </a>
+            <img src="rest/file/img?src={{i.attachments[0].path}}" width="100px;" />
         </div>
     `
 })
