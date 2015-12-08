@@ -50,4 +50,14 @@ public class Util {
             e.printStackTrace();
         }
     }
+
+    public static byte[] asStream(String path){
+        try {
+            return Files.readAllBytes(Paths.get(ROOT_PATH + path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  new byte[0];
+    }
+
 }
