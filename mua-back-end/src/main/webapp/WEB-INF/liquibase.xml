@@ -23,14 +23,23 @@
 
     <changeSet id="1-1" author="dandeeee">
         <insert tableName="Product">
-            <column name="title" value="My little dress"/>
-            <column name="quantity" value="12"/>
+            <column name="title" value="Морская волна"/>
+            <column name="quantity" value="7"/>
+            <column name="price" value="55"/>
+            <column name="descr" value="Легкая  струящаяся юбка цвета морской волны станет украшением вашего гардероба. Модель отлично подойдет как для работы, так и для неформальных вечеринок. В этой длинной юбке вы будете в центре внимания, подчеркнете свой отличный вкус и осиную талию."/>
         </insert>
         <insert tableName="Product">
-            <column name="title" value="Good bye America"/>
+            <column name="title" value="Шотландка"/>
             <column name="quantity" value="2"/>
+            <column name="price" value="45"/>
+            <column name="descr" value="Шотландка никогда не выйдет из моды, особенно если это юбка-карандаш. Она хорошо сочетается с джинсовой рубашкой, бежевой блузкой, а особенно с кожаной курткой, металлическими шипами и молниями. С этой моделью вы можете создать любой образ: от роковой обольстительницы до скромной учительницы младших классов."/>
+        </insert>
+        <insert tableName="Product">
+            <column name="title" value="Белая Мини"/>
+            <column name="quantity" value="12"/>
+            <column name="price" value="30"/>
+            <column name="descr" value="Короткая юбка белого цвета - must have в гардеробе любой девушки. В этой модели вы будете выглядеть свежо и ярко. Кроме того, она хорошо комбинируется с любой одеждой: блузкой, пиджаком, курткой, коротким трикотажным свитерком. В зависимости от настроения, вы подберете ансамбль, который произведет впечатление романтичной барышни, роковой красотки или даже деловой леди."/>
         </insert>
     </changeSet>
-
 
 </databaseChangeLog>
